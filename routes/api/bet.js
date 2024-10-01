@@ -14,7 +14,7 @@ const Bet = require("../../models/Bet");
 router.get("/mybets", async (req, res) => {
     try {
         let myBets = await Bet.find({
-            userId: "am00982272873",
+            userId: "am0000002",
            
         }).limit(50);
         res.json({ status: "0000", myBets });
