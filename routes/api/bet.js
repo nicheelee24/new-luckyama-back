@@ -11,12 +11,12 @@ const Transaction = require("../../models/Transaction");
 const User = require("../../models/User");
 const Bet = require("../../models/Bet");
 
-router.get("/mybets", async (req, res) => {
+router.get("/mybets",auth, async (req, res) => {
     try {
         let myBets = await Bet.find({
             userId: "am0000002",
            
-        }).limit(50);
+        }).limit(2);
         res.json({ status: "0000", myBets });
     } catch (err) {
         console.error(err.message);
